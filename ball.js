@@ -18,6 +18,8 @@ const animateBall = () => {
     const y = Math.random() * window.innerHeight;
     moveBall(x, y);
     requestAnimationFrame(animateBall);
+    /* change ball color */
+    ball.style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
 };
 
 animateBall();
