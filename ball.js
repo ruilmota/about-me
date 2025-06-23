@@ -12,4 +12,12 @@ const moveBall = (x, y) => {
     ball.style.top = y + "px";
 };
 
-moveBall(300, 300);
+/* requestAnimationFrame  to animate ball randomly */
+const animateBall = () => {
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    moveBall(x, y);
+    requestAnimationFrame(animateBall);
+};
+
+animateBall()
