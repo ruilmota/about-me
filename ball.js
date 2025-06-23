@@ -20,4 +20,4 @@ const animateBall = () => {
     requestAnimationFrame(animateBall);
 };
 
-animateBall()
+animateBall();
