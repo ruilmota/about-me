@@ -12,14 +12,26 @@ const moveBall = (x, y) => {
     ball.style.top = y + "px";
 };
 
+/* set a ball moving speed */
+const speed = 10;
+let i=0;
+
 /* requestAnimationFrame  to animate ball randomly */
 const animateBall = () => {
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
-    moveBall(x, y);
+
+    if (i % speed === 0) {
+        /* change ball position with speed */
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        moveBall(x, y);
+        /* change ball color */
+        ball.style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+        
+    }
+
+    i++;
     requestAnimationFrame(animateBall);
-    /* change ball color */
-    ball.style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+    
 };
 
 animateBall();
